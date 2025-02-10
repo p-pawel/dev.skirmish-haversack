@@ -1,0 +1,25 @@
+name: Build SkirmishHaversack
+
+on: 
+  push
+
+jobs:
+  build:
+    name: Compile the library
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.7.0
+        with:
+          java-version: 21
+          distribution: 'temurin'
+          cache: 'gradle'
+          cache-dependency-path: | # optional
+            **.gradle*
+            **/gradle-wrapper.properties
+      - name: Gradle build
+        run: ./gradlew build --no-daemon
