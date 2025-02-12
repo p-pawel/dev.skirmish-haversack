@@ -22,4 +22,4 @@ jobs:
             **.gradle*
             **/gradle-wrapper.properties
       - name: Gradle build
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build testCoverage --no-daemon
