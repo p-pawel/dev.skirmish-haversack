@@ -1,6 +1,7 @@
 plugins {
     id("maven-publish")
     kotlin("jvm") version "2.0.21"
+    id("jacoco")
 }
 
 group = "dev.skirmish-haversack"
